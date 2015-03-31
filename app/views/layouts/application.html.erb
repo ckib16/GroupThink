@@ -25,8 +25,12 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                  <li> <%= link_to 'About', welcome_about_path %> </li>
+                  <li> <%= link_to 'About', about_path %> </li>
+                  <% if current_user %>
+                    <li> <%= link_to "Wikis", wikis_path %></li>
+                  <% end %>     
               </ul>
+
               <ul class="nav navbar-nav navbar-right"> 
                 <% if current_user %>
                   <li> <%= link_to current_user.email, edit_user_registration_path %> </li>
@@ -42,24 +46,25 @@
       <!-- /.container -->
   </nav>
 
-  <% if flash[:notice] %>
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:notice] %>
-    </div>
-  <% elsif flash[:error] %>
-    <div class="alert alert-danger">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:error] %>
-    </div>
-  <% elsif flash[:alert] %>
-    <div class="alert alert-warning">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:alert] %>
-    </div>
-  <% end %>
 
-<%= yield %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:error] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
 
 </body>
 </html>

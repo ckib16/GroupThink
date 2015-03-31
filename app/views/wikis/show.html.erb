@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      
+      <h3>Title</h3>
+      <p> <%= @wiki.title %> </p>
+      
+      <h3>Body</h3>
+      <p> <%= @wiki.body %> </p>
+
+      <h3>Private</h3>
+      <p> <%= @wiki.private %> </p>        
+
+      <h3>User</h3>
+      <p> <%= @wiki.user.email %> </p>
+
+      <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-success' %>
+
+      <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete this topic?" } %>
+
+      </br>
+      </br>
+
+      <%= link_to 'Back To Wiki List', wikis_path, class: 'btn btn-link' %> 
+
+    </div>
+  </div>
+</div>
