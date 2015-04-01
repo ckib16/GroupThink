@@ -1,11 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-    <h1>Wikis</h1>
-      <%= render partial: 'wikis/wiki', collection: @wikis %>
+<div class="row">
+  <div class="col-md-8">
+  <h1>Wikis</h1>
+    <%= render partial: 'wikis/wiki', collection: @wikis %>
 
-      <%= link_to 'New Wiki', new_wiki_path %>
+    <%= link_to 'New Wiki', new_wiki_path %>
 
-    </div>
   </div>
 </div>

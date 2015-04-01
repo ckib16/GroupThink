@@ -14,6 +14,7 @@ gem 'figaro', '1.0'
 gem 'faker'
 gem 'pundit'
 gem 'devise'
+gem 'rails-erd'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
