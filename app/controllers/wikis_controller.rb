@@ -4,27 +4,29 @@ class WikisController < ApplicationController
   # GET /wikis
   def index
     @wikis = Wiki.all
+    authorize @wikis
   end
 
   # GET /wikis/1
   def show
-    @wikis = Wiki.find(params[:id])
+    
   end
 
   # GET /wikis/new
   def new
     @wiki = Wiki.new
+    authorize @wiki
   end
 
   # GET /wikis/1/edit
   def edit
+    authorize @wiki
   end
 
   # POST /wikis
   def create
-    
     @wiki = current_user.wikis.build(wiki_params)
-
+      authorize @wiki
     respond_to do |format|
       if @wiki.save
         format.html { redirect_to @wiki, notice: 'Wiki was successfully created.' }
@@ -36,6 +38,8 @@ class WikisController < ApplicationController
 
   # PATCH/PUT /wikis/1
   def update
+    authorize @wiki
+
     respond_to do |format|
       if @wiki.update(wiki_params)
         format.html { redirect_to @wiki, notice: 'Wiki was successfully updated.' }

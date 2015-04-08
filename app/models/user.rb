@@ -6,13 +6,26 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
-# Chris added these for callback to set default authroizaton w/ Pundit
-  # before_create :set_role
+  def standard?
+    role == 'standard'
+  end
 
-  # private
+  def premium?
+    role == 'premium'
+  end
 
-  # def set_role
-  #   role ||= "free"
-  # end
+  def admin?
+    role == 'admin'
+  end
+
+
+# Chris added these for callback to set default authorizaton w/ Pundit
+  before_create :set_role
+
+  private
+
+  def set_role
+    self.role ||= "standard"
+  end
 
 end
