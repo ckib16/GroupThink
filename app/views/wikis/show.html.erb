@@ -11,7 +11,7 @@
     <p> <%= @wiki.private %> </p>        
 
     <h3>User</h3>
-    <p> <%= @wiki.user.email %> </p>
+    <p> <%= @wiki.user.name || @wiki.user.email %> </p>
 
     <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-success' %>
 

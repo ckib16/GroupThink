@@ -23,16 +23,7 @@ class WikisController < ApplicationController
   # POST /wikis
   def create
     
-    @wiki = Wiki.new(wiki_params)
-    @wiki.user = current_user
-
-    # Stuck, not getting params and can't associate wiki to the current user
-    # @user = User.find(params[:user_id])
-    # @wiki = @user.wikis
-    # @new_wiki = Wiki.new
-
-    # @wiki = current_user.wikis.build( wiki_params )
-    # @wiki.user = @user
+    @wiki = current_user.wikis.build(wiki_params)
 
     respond_to do |format|
       if @wiki.save
