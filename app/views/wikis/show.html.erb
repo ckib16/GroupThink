@@ -2,10 +2,10 @@
   <div class="col-md-8">
     
     <h3>Title</h3>
-    <p> <%= @wiki.title %> </p>
+    <p> <%= markdown_to_html @wiki.title %> </p>
     
     <h3>Body</h3>
-    <p> <%= @wiki.body %> </p>
+    <p> <%= markdown_to_html @wiki.body %> </p>
 
     <h3>Private</h3>
     <p> <%= @wiki.private %> </p>        
