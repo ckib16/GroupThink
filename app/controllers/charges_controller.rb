@@ -25,16 +25,18 @@ class ChargesController < ApplicationController
       currency: 'usd'
       )
 
-    # add code: if current_user is upgraded = change role to premium and flash success; if not = redirect
+    # add code: if current_user is upgraded = change role to premium
+    current_user.role = 'premium'
 
     flash[:success] = "Thank you for your payment #{current_user.email}!"
-    redirect_to user_path(current_user)
+    redirect_to edit_user_registration_path
 
-  #Rescue block catches and displays errors
-  rescue Stripe::CardError => e
+
+    #Rescue block catches and displays errors
+    rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
-  end
+    end
 
   private
   def membership_price
