@@ -3,13 +3,13 @@ class WikisController < ApplicationController
 
   # GET /wikis
   def index
-    @wikis = Wiki.all
+    @wikis = Wiki.visible_to(current_user)
     authorize @wikis
   end
 
   # GET /wikis/1
   def show
-    
+    authorize @wiki
   end
 
   # GET /wikis/new
