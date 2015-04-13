@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Rails blocipedia: development" uuid="5dd8b070-f46a-4cf0-93ee-723477816052">
-      <first-sync>true</first-sync>
-    </data-source>
-    <data-source name="Rails blocipedia: test" uuid="620fc3f5-fa6c-4bed-b236-d0a5750aa623">
-      <first-sync>true</first-sync>
-    </data-source>
+    <data-source name="Rails blocipedia: development" uuid="5dd8b070-f46a-4cf0-93ee-723477816052" />
+    <data-source name="Rails blocipedia: test" uuid="620fc3f5-fa6c-4bed-b236-d0a5750aa623" />
   </component>
 </project>
