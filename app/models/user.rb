@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
 
-# Chris added these for callback to set default authorizaton w/ Pundit
+# Chris added these for callback to set default authorization w/ Pundit
   before_create :set_role
 
   private
