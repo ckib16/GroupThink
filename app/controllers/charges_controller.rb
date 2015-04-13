@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
       )
 
     # add code: if current_user is upgraded = change role to premium
-    current_user.role = 'premium'
+    current_user.update_attribute(:role, 'premium')
 
     flash[:success] = "Thank you for your payment #{current_user.email}!"
     redirect_to edit_user_registration_path
