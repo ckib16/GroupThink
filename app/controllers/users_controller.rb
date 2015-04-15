@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       flash[:error] = "Unable to update account"
       redirect_to edit_user_registration_path
     end 
+  end
 
     private
 

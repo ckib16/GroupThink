@@ -55,6 +55,18 @@
       <h3>Membership Status</h3>
       <p>Your current membership level is: <%= current_user.role.upcase %></p>
 
+  
+
+      <!-- Plan to downgrade the user -->
+      <!-- Set parms for role -> 'standard' -->
+      <!-- Pass those params to users_contoller#update??? -->
+      <!-- Make the user in User.rb role change in DB -->
+      <div class="form-group">   
+        <%#= f.hidden_field(current_user, 'standard' => params[:role]) %>  
+        <%= hidden_field_tag 'user[role]', 'standard' %> 
+        <%= f.submit "Downgrade Account", class: 'btn btn-warning' %> 
+      </div>
+
       <% end %>
     </div>
   </div>
