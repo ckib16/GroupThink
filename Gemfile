@@ -15,7 +15,11 @@ gem 'faker'
 gem 'pundit'
 gem 'devise'
 gem 'rails-erd'
+<<<<<<< HEAD
 gem 'redcarpet'
+=======
+gem 'stripe'
+>>>>>>> Stripe-Upgrade_account
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Rails blocipedia: development" uuid="5dd8b070-f46a-4cf0-93ee-723477816052">
+  <data-source name="Rails blocipedia: development" uuid="189d6621-3ca4-4459-88ed-2ff795625f2b">
     <database-info product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
@@ -48,7 +48,7 @@
       <index name="index_wikis_on_user_id" unique="true" columns="user_id"/>
     </table>
   </data-source>
-  <data-source name="Rails blocipedia: test" uuid="620fc3f5-fa6c-4bed-b236-d0a5750aa623">
+  <data-source name="Rails blocipedia: test" uuid="6c0ae79f-2cc3-4ee2-9d5c-e076af4d4f63">
     <database-info product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
