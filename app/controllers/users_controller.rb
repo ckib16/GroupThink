@@ -3,17 +3,17 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update_attributes(user_params)
-      flash[:notice] = "User account updated."
+      flash[:notice] = 'User account updated.'
       redirect_to edit_user_registration_path
     else
-      flash[:error] = "Unable to update account"
+      flash[:error] = 'Unable to update account'
       redirect_to edit_user_registration_path
-    end 
+    end
   end
 
-    private
+  private
 
-    def user_params
-      params.require(:user).permit(:role)
-    end
+  def user_params
+    params.require(:user).permit(:role)
+  end
 end
