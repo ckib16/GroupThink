@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update_attributes(user_params)
+      if current_user.standard?
+        current_user.wikis.update_all(private: false)
+      end
       flash[:notice] = 'User account updated.'
       redirect_to edit_user_registration_path
     else
