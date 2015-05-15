@@ -20,6 +20,7 @@ class WikisController < ApplicationController
 
   # GET /wikis/1/edit
   def edit
+    @users = User.all
     authorize @wiki
   end
 
