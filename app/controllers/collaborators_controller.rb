@@ -5,10 +5,9 @@ class CollaboratorsController < ApplicationController
   def create
     @collaborator = Collaborator.new(wiki_id: @wiki.id, user_id: params[:user_id])
     if @collaborator.save
-      flash
-      #....
+      flash[:notice] = "Your collaborator has been added to your wiki"
     else
-        #error flash
+      flash[:error] = "We couldn't save that collaborator to your wiki"
     end
 
     redirect_to edit_wiki_path(@wiki)
@@ -18,6 +17,7 @@ class CollaboratorsController < ApplicationController
     @collaborator = Collaborator.find(params[:id])
 
     @collaborator.destroy
+    flash[:error] = "The collaborator has been removed from your wiki"
 
     redirect_to edit_wiki_path(@wiki)
   end
