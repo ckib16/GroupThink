@@ -17,6 +17,7 @@ gem 'devise'
 gem 'rails-erd'
 gem 'redcarpet'
 gem 'stripe'
+gem 'newrelic_rpm'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
