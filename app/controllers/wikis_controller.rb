@@ -3,8 +3,9 @@ class WikisController < ApplicationController
 
   # GET /wikis
   def index
-    @wikis = Wiki.visible_to(current_user)
-    authorize @wikis
+    @wikis = policy_scope(Wiki)
+    # @wikis = Wiki.visible_to(current_user)
+    # authorize @wikis
   end
 
   # GET /wikis/1
@@ -20,6 +21,7 @@ class WikisController < ApplicationController
 
   # GET /wikis/1/edit
   def edit
+    @users = User.all
     authorize @wiki
   end
 
