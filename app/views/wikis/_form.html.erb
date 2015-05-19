@@ -39,29 +39,6 @@
 
       <% end %>
 
-      <% if @wiki.private? %>
-        <h2>Manage Collaborators</h2>
-
-        <table class="table table-hover">
-          <% @users.each do |user| %>
-            <tr>
-              <td>
-                <%= user.name %>
-              </td>
-              <td>
-                <% if @wiki.users.include?(user) %>
-                  <%= link_to "Remove Collaborator", wiki_collaborator_path(@wiki, @wiki.collaborator_for(user)), method: :delete, class: "btn btn-danger" %>
-                <% else %>
-                  <%= link_to "Add Collaborator", wiki_collaborators_path(@wiki, user_id: user.id), method: :post, class: "btn btn-success" %>
-                <% end %>
-
-              </td>
-            </tr>
-          <% end %>
-        </table>
-      <% end %>
-
-
     </div>
   </div>
 
