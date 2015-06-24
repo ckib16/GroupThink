@@ -20,7 +20,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <%= link_to "GroupThink", root_path , class: 'navbar-brand' %>  
+              <%= link_to "GroupThink", root_path , class: 'navbar-brand' %>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -28,10 +28,10 @@
                   <li> <%= link_to 'About', about_path %> </li>
                   <% if current_user %>
                     <li> <%= link_to "Wikis", wikis_path %></li>
-                  <% end %>     
+                  <% end %>
               </ul>
 
-              <ul class="nav navbar-nav navbar-right"> 
+              <ul class="nav navbar-nav navbar-right">
 
                 <% if current_user %>
 
@@ -51,7 +51,7 @@
       </div>
       <!-- /.container -->
   </nav>
-   
+
   <% if flash[:notice] %>
     <div class="alert alert-success">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -75,6 +75,24 @@
 
   </div>
   <!-- /.container -->
-  
+
+  <script type="text/javascript">
+    //QuickMetrics snippet to put in tracked application
+
+  $(document).ready( function(){
+    var _bm_event = {
+      event: { name: "pageLoad"},
+    }
+
+    var _bm_request = new XMLHttpRequest();
+    _bm_request.open("POST", "https://quickmetrics.herokuapp.com//api/events", true);
+    _bm_request.setRequestHeader('Content-Type', 'application/json');
+    _bm_request.onreadystatechange = function() {
+      // respond to controller finish events
+    };
+    _bm_request.send(JSON.stringify(_bm_event));
+  });
+  </script>
+
 </body>
 </html>
